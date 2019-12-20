@@ -1,0 +1,15 @@
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %highlight(%-5level) [%10thread] %cyan(%-40logger{36}) - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--<logger name="org.springframework.ws" level="TRACE"/>-->
+    <!--<logger name="org.springframework.security" level="DEBUG"/>-->
+    <logger name="org.apache.http" level="DEBUG"/>
+
+    <root level="info">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>

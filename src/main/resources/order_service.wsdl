@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<wsdl:definitions name="Orders" targetNamespace="http://kouba67.com/orders" xmlns:tns="http://kouba67.com/orders"
+                  xmlns:types="http://kouba67.com/orders/types"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+
+    <wsdl:types>
+        <xsd:schema targetNamespace="http://kouba67.com/orders/types"
+                    xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+                    version="1.0">
+
+            <xsd:element name="order">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="order_id" type="xsd:string"/>
+                        <xsd:element name="item" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:schema>
+    </wsdl:types>
+
+    <wsdl:message name="OrdersInput">
+        <wsdl:part name="order" element="types:order"/>
+    </wsdl:message>
+
+    <wsdl:portType name="Orders_PortType">
+        <wsdl:operation name="sendOrder">
+            <wsdl:input message="tns:OrdersInput"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:binding name="Orders_Binding" type="tns:Orders_PortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="sendOrder">
+            <soap:operation soapAction="http://kouba67.com/orders/service/sendOrder"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:service name="Order_Service">
+        <wsdl:documentation>Order service</wsdl:documentation>
+        <wsdl:port name="Orders_Port" binding="tns:Orders_Binding">
+            <soap:address location="" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+        </wsdl:port>
+    </wsdl:service>
+
+</wsdl:definitions>

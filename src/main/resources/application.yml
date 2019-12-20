@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+
+orders:
+  service:
+    username: "john"
+    password: "john"
+
+    client:
+      username: "john"
+      password: "john"
+      hostname: "localhost"
+      port: 8080
+      url: "ws/order_service/send_order"
+
