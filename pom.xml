@@ -19,7 +19,7 @@
         <build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
         <awaitility.version>3.1.6</awaitility.version>
         <assertj-core.version>3.13.2</assertj-core.version>
-        <guava.version>28.1-jre</guava.version>
+        <guava.version>29.0-jre</guava.version>
         <lombok.version>1.18.10</lombok.version>
         <spring-boot.version>2.1.5.RELEASE</spring-boot.version>
     </properties>
